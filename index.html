@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pocket Pharmacist</title>
+    <title>DocSnap</title>
     <link rel="stylesheet" href="style.css"> </head>
 <body>
     <img id="logo" src="Medical Care.gif"></img>
@@ -41,7 +41,7 @@ async function analyzePrescription() {
     });
     const fileInputEl = document.querySelector("#prescriptionImage");
     const imageParts = await Promise.all([...fileInputEl.files].map(fileToGenerativePart));
-    const prompt ="You are an POCKET PHARMACIST. You are a genius in medicine and biology.You will be provided with an image of an prescription to help the user understand the prescription better you will state the tablet name with usage and description about it with its dosage if given and side effects.Make sure the response is given in a user freindly well aligned manner. I want you to do this for all the medicines in the prescription. This answer will be directly pasted in html.So do use html styling tags to make it look good. "
+    const prompt ="You are an DocSnap. You are a genius in medicine and biology.You will be provided with an image of an prescription to help the user understand the prescription better you will state the tablet name with usage and description about it with its dosage if given and side effects.Make sure the response is given in a user freindly well aligned manner. I want you to do this for all the medicines in the prescription. This answer will be directly pasted in html.So do use html styling tags to make it look good. "
     // Assuming the prescription image itself is the prompt
     const result = await model.generateContent([prompt,imageParts]); 
     const response = await result.response;
